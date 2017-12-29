@@ -1,29 +1,52 @@
 import React from 'react';
-import {Button} from 'reactstrap';
-import '../styles/custom.css';
+import {Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink} from 'reactstrap';
 class Banner extends React.Component {
   constructor(props)
   {
     super(props);
+    this.toggle=this.toggle.bind(this);
+    this.state={
+      isOpen:false
+    };
+  }
+  toggle()
+  {
+    this.setState({
+      isOpen:!this.state.isOpen
+    })
   }
   render() {
     return(
       <div>
-      <section class="section1">
-        <h2>{this.props.name}</h2>
-        <p>{this.props.title}</p>
-      </section>
-      <section class="section2">
-        <h2>{this.props.name}</h2>
-        <p>{this.props.title}</p>
-      </section>
+      <Navbar color="faded" light expand="md">
+        <NavbarBrand href="/">{this.props.name}</NavbarBrand>
+        <NavbarToggler onClick={this.toggle} />
+         <Collapse isOpen={this.state.isOpen} navbar>
+         </Collapse>
+         <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="#">About Me</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#">Skills</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#">Education</NavLink>
+              </NavItem>
+              </Nav>
+      </Navbar>
       </div>
     );
   }
 }
 Banner.defaultProps={
   name:"Yadu Nandan",
-  title:"Web Developer",
-  aboutText:"A paragraph about My self"
+  
 }
 export default Banner;

@@ -1,5 +1,33 @@
-body {
+body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
+.my-name{
+	margin:0 40 0 40;
+}
+.section2{
+  background-color: #f48675;
+  /*color:white;*/
+}
+.section2 a{
+	color: black;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+ img{
+ 	border-style: solid;
+ 	border-radius: 50%;
+ 	border-color: #b5b6b7;
+ 	border-width: 10px;
+ 	height: auto; 
+    width: auto; 
+    max-width: 20%; 
+    max-height: 20%;
+    margin-bottom: 40px;
+    margin-top: 20px;
+ }
