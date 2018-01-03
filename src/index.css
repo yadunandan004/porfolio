@@ -9,16 +9,32 @@ body{
 .my-name{
 	margin:0 40 0 40;
 }
-
-.section2{
+.raise{
+  display: inline-block;
+ padding: 10px 20px 10px 20px;
+ margin-top: 20px;
+ margin-bottom: 20px; 
+ box-shadow: -5px 5px 4px 1px #9b9b9b; 
+}
+/*.section2{
   background-color: #f48675;
-  /*color:white;*/
+  color:white;
+}*/
+#about{
+  padding-top: 70px;
+}
+.section4{
+  /*background-color: #35a37c;*/
+}
+.section5{
+  /*background-color: #35a37c;*/
 }
 .section2 a{
 	color: black;
 }
 .left{
 	float: left;
+  text-align: left;
 }
 .right{
 	float: right;
@@ -30,11 +46,17 @@ body{
  	border-width: 10px;
  	height: auto; 
     width: auto; 
-    max-width: 15%; 
-    max-height: 15%;
-    margin-bottom: 40px;
-    margin-top: 20px;
+    max-width: 60%; 
+    max-height: 60%;
  }
- section{
-  padding:100 0 100 0;
+ .nav-text{
+  color:white;
+ }
+/* section{
+  padding:20px 0px 20px 0px;
+}*/
+#my-footer{
+  padding:50px 0px 50px 0px;
+  background-color: #191918;
+  color: #fff435;
 }

@@ -7,8 +7,8 @@ class Edu extends React.Component{
 	}
 	render(){
 		return(
-			<section>
-				<h3>Education:</h3>
+			<section id="edu">
+				<h3 className="raise">Education:</h3>
 				<School data={this.props.school[0]} />
 				<br />
 				<School data={this.props.school[1]} />
@@ -21,8 +21,8 @@ class Edu extends React.Component{
 function Work(props)
 {
 	return(
-		<div>
-		<h4>Work Experience: </h4>
+		<Container>
+		<h4 className="raise">Work Experience: </h4>
 		<Alert color="warning">
 		<Row>
 		<Col>{props.data.name}</Col>
@@ -31,22 +31,33 @@ function Work(props)
 		</Alert>
 		<Alert color="primary">
 		<Row>
-		<Col><h6>{props.data.title}</h6></Col>
+		<Col><h6>Role: {props.data.title}</h6></Col>
 		<Col>{props.data.term}</Col>
 		</Row>
 		</Alert>
+		<Row>
+		
+		<Col md={3}>
+		<Alert color="success">
+			<h5>Responsibilities:</h5>
+			</Alert>
+		</Col>
+
+		<Col md={5}>
 		<ListGroup>
 		{
 			props.data.resp.map(function(ele){
 				return (
-					<Col md={{size:4,offset:4}}>
+					
 					<ListGroupItem  action>{ele}</ListGroupItem>
-					</Col>
+					
 					)
 			})
 		}
 		</ListGroup>
-		</div>
+		</Col>
+		</Row>
+		</Container>
 	)
 }
 function School(props)

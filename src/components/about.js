@@ -1,5 +1,5 @@
 import React from 'react';
-import {Row,Col} from 'reactstrap';
+import {Row,Col,Container,ListGroup,ListGroupItem} from 'reactstrap';
 import FontAwesome from 'react-fontawesome';
 class About extends React.Component{
 	constructor(props)
@@ -9,19 +9,25 @@ class About extends React.Component{
 	render()
 	{
 		return(
-			<div className="section2">
-		        <h3>{this.props.title}</h3>
-		        <img id="profile-img" src={require("../IMG_1140.JPG")} alt="profile Picture" />
-		        <p >{this.props.aboutText}</p>
-		        <h4>Contact Me:</h4>
-		        <ContactBlock contacts={this.props.contacts}/>
+			<div id="about">
+		        <h3 >{this.props.title}</h3>
 		        <Row>
-		        <Col md={4} xs={2}> </Col> 
-		        <Col md={1} sm={1}><a href={this.props.linkedIn}><FontAwesome name='linkedin-square' size='2x'/></a></Col>
-		        <Col md={1} sm={1}><a href={this.props.gitHub}><FontAwesome name='github-square' size='2x'/></a></Col>
-		        <Col md={1} sm={1}><a href={this.props.twitter}><FontAwesome name='twitter-square' size='2x'/></a></Col>
-		        <Col md={1} sm={1}><a href={this.props.facebook}><FontAwesome name='facebook-square' size='2x'/></a></Col>
+		        <Col md={3} xs={6}>
+		        <Container className="left">
+		        <ListGroup> 
+		        <ListGroupItem tag="a" href={this.props.linkedIn} color="success" target="_blank"><FontAwesome name='linkedin-square' size='2x'/> LinkedIn</ListGroupItem>
+		        <ListGroupItem tag="a" href={this.props.gitHub} color="secondary" target="_blank"><FontAwesome name='github-square' size='2x'/> GitHub</ListGroupItem>
+		        <ListGroupItem tag="a" href={this.props.twitter} color="info" target="_blank"><FontAwesome name='twitter-square' size='2x'/> Twitter</ListGroupItem>
+		        <ListGroupItem tag="a" href={this.props.facebook} color="primary" target="_blank"><FontAwesome name='facebook-square' size='2x'/> Facebook</ListGroupItem>
+		        </ListGroup>
+		        </Container>
+		        </Col>
+		        <Col md={6} xs={0}>
+		        <img id="profile-img" src={require("../IMG_1140.JPG")} alt="profile Picture" />
+		        </Col>
 		        </Row>
+		        <ContactBlock contacts={this.props.contacts}/>
+		        <p >{this.props.aboutText}</p>
 		      </div>
 			);
 	}

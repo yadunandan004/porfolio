@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from 'reactstrap';
+import {Button,Container} from 'reactstrap';
 class Skills extends React.Component{
 	constructor(props)
 	{
@@ -7,12 +7,14 @@ class Skills extends React.Component{
 	}
 	render(){
 		return(
-				<section>
-					<h3>Skills</h3>
+				<section id="skills">
+					<Container>
+					<h3 className="raise">Skills</h3>
 					<SkillBlock title="Languages" list={this.props.languages} color="primary" />
 					<SkillBlock title="Frameworks" list={this.props.frameworks}  color="success"/>
 					<SkillBlock title="Databases" list={this.props.Databases}  color="danger"/>
 					<SkillBlock title="Other" list={this.props.Other}  color="warning"/>
+					</Container>
 				</section>
 			)
 	}
