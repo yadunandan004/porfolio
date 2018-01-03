@@ -11,11 +11,12 @@ class About extends React.Component{
 		return(
 			<div className="section2">
 		        <h3>{this.props.title}</h3>
-		        <img src={require("../IMG_1140.JPG")} alt="profile Picture" />
+		        <img id="profile-img" src={require("../IMG_1140.JPG")} alt="profile Picture" />
 		        <p >{this.props.aboutText}</p>
 		        <h4>Contact Me:</h4>
 		        <ContactBlock contacts={this.props.contacts}/>
 		        <Row>
+		        <Col md={4} xs={2}> </Col> 
 		        <Col md={1} sm={1}><a href={this.props.linkedIn}><FontAwesome name='linkedin-square' size='2x'/></a></Col>
 		        <Col md={1} sm={1}><a href={this.props.gitHub}><FontAwesome name='github-square' size='2x'/></a></Col>
 		        <Col md={1} sm={1}><a href={this.props.twitter}><FontAwesome name='twitter-square' size='2x'/></a></Col>

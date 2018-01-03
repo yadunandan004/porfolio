@@ -3,9 +3,13 @@ body{
   padding: 0;
   font-family: sans-serif;
 }
+.App {
+  text-align: center;
+}
 .my-name{
 	margin:0 40 0 40;
 }
+
 .section2{
   background-color: #f48675;
   /*color:white;*/
@@ -19,15 +23,18 @@ body{
 .right{
 	float: right;
 }
- img{
+ #profile-img{
  	border-style: solid;
  	border-radius: 50%;
  	border-color: #b5b6b7;
  	border-width: 10px;
  	height: auto; 
     width: auto; 
-    max-width: 20%; 
-    max-height: 20%;
+    max-width: 15%; 
+    max-height: 15%;
     margin-bottom: 40px;
     margin-top: 20px;
  }
+ section{
+  padding:100 0 100 0;
+}
