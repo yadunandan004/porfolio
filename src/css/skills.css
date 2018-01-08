@@ -1,0 +1,15 @@
+#skills{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#skills .skl{
+	background-color: #EEEEEE;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-radius: 15px;
+	margin-bottom: 10px;
+}
+.skl div{
+	display: inline-block;
+	margin-left:10px; 
+}

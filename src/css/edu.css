@@ -1,0 +1,29 @@
+#edu{
+	background-color: #651FFF;
+	margin-top: 20px;
+	padding-bottom: 20px;
+	color: #fff;
+}
+
+#edu .raise{
+	background-color: #3F51B5;
+	box-shadow: -5px 5px 4px 1px #4A148C;
+}
+
+#edu .school-block{
+	border:3px solid #FFEB3B;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	padding: 20px;
+}
+
+#edu .resp{
+	display: inline-block;
+}
+#edu .resp div{
+	background-color: #FFCA28;
+	color: #6D4C41;
+	border-radius: 5px;
+	padding: 10px 10px 0px 10px;
+	display: inline-block;
+}

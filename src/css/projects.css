@@ -1,0 +1,23 @@
+#projects{
+	background-color: #CFD8DC;
+	padding-bottom:20px; 
+}
+
+#projects .raise
+{
+	background-color: #009688;
+	color: #37474F;
+}
+
+.modal-header{
+	background-color: #FFA726;
+}
+.modal-lg{
+	width:50%;
+}
+.modal-body{
+	background-color: #FFFDE7;
+}
+.modal-footer{
+	background-color: #000000;
+}

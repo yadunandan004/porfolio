@@ -1,0 +1,54 @@
+#about{
+	background-color: #C62828;
+	color: #fff;
+	padding-top: 70px;
+	padding-bottom: 20px;
+}
+
+#about .ribbon{
+	background-color: #E64A19;
+	display: inline-block;
+	padding: 5px 15px;
+	border-radius: 5px;
+	color: #FFFFFF;
+	text-shadow: 3px 3px 4px #BF360C;
+	margin-bottom: 20px;
+	/*box-shadow: -5px 5px 4px 1px #B71C1C;*/
+}
+
+ #profile-img{
+ 	border-style: solid;
+ 	border-radius: 50%;
+ 	border-color: #b5b6b7;
+ 	border-width: 10px;
+ 	height: auto; 
+    width: auto; 
+    max-width: 20%; 
+    max-height: 20%;
+ }
+ #about .photo-frame{
+ 	margin-bottom: 50px;
+ }
+#about .icon{
+	border: none;
+	border-radius: 50%;
+	padding: 7px 10px;
+	color: #5D4037;
+	background-color:#FFC107;
+}
+#about p{
+	margin-top: 20px;
+	font-size: 1.25vw;
+}
+#about .float-icons{
+	position: fixed;
+	top:70px;
+	z-index: 500;
+}
+#email
+{
+	background-color: #FFC107;
+	color: #5D4037;
+	padding: 5px 10px;
+	border-radius: 10px;
+}

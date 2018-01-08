@@ -1,6 +1,7 @@
 import React from 'react';
-import {Card,CardImg,CardBody,CardTitle,CardSubtitle,CardText,Button,Row,Col,
-Modal,ModalHeader,ModalBody,ModalFooter,CardImgOverlay} from 'reactstrap';
+import '../css/projects.css';
+import {Card,CardImg,CardTitle,CardText,CardBody,Button,Row,Col,
+Modal,ModalHeader,ModalBody,ModalFooter,CardImgOverlay,Container} from 'reactstrap';
 import FontAwesome from 'react-fontawesome';
 class Projects extends React.Component{
 	constructor(props)
@@ -8,17 +9,26 @@ class Projects extends React.Component{
 		super(props);
 
 	}
-
+	componentDidUpdate()
+	{
+		console.log(this.props.data.projects[0].imgPath);
+	}
 	render()
 	{
 		return(
-			<section id="projects">
+			<div id="projects">
 
 				<h3 className="raise">Projects</h3>
+				<Container>
 				<Row>
-				<ProjBlock projs={this.props.projects}/>
+					{
+						this.props.data.projects.map(function(ele,idx){
+							return (<Proj key={idx} idx={idx} data={ele}/>)
+						})
+					}
 				</Row>
-			</section>
+				</Container>
+			</div>
 			)
 	}
 }
@@ -29,16 +39,23 @@ class Proj extends React.Component{
 			activeModal:null
 		}
 		this.toggle=this.toggle.bind(this);
+		this.openLink=this.openLink.bind(this);
+	}
+	openLink(link)
+	{
+		window.open(link,'_blank');
+		this.setState({
+			activeModal:null
+		});
 		
 	}
-
 	toggle(idx,e)
 	{
 		if(e!==undefined)
 		{
 			e.preventDefault();
 		}
-		if(this.state.activeModal==idx)
+		if(this.state.activeModal===idx)
 		{
 			this.setState({
 				activeModal:null
@@ -50,47 +67,61 @@ class Proj extends React.Component{
 				activeModal:idx
 			});
 		}
-		
 	}
-
 	render()
 	{
 		return(
 			<Col md={4} xs={12}>
-			{/*<a onClick={e=>{this.toggle(this.props.idx,e)}} href="#">*/}
-			<Card inverse>
-	        <CardImg width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97270&w=318&h=270&bg=333333&txtclr=666666" alt="Card image cap" />
-	        <CardImgOverlay>
-	          <CardTitle>Card Title</CardTitle>
-	          <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
+			<a id="plain-link" onClick={e=>{this.toggle(this.props.idx,e)}} href="#">
+			<Card>
+	        <CardImg top width="100%" src={this.props.data.imgPath} alt="Card image cap" />
+	        <CardBody>
+	          <CardTitle>{this.props.data.title}</CardTitle>
+	          <CardText>{this.props.data.summary}</CardText>
 	          <CardText>
-	            <small className="text-muted">Last updated 3 mins ago</small>
+	            <small className="text-muted">
+	            {this.props.data.tags.join(",")}
+	            </small>
 	          </CardText>
-	        </CardImgOverlay>
+	        </CardBody>
 	      </Card>
-	      {/*</a>*/}
-			<Modal isOpen={this.state.activeModal==this.props.idx} toggle={()=>{this.toggle(this.props.idx)}} className={this.props.className}>
-          <ModalHeader toggle={()=>{this.toggle(this.props.idx)}} >Modal title</ModalHeader>
+	      </a>
+			<Modal isOpen={this.state.activeModal===this.props.idx} toggle={()=>{this.toggle(this.props.idx)}} className="modal-lg">
+          <ModalHeader className="mhead" toggle={()=>{this.toggle(this.props.idx)}} >{this.props.data.title}</ModalHeader>
           <ModalBody>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          	<div className="mbody">
+          	<h6>{this.props.data.summary}</h6>
+          	{
+        		this.props.data.detail.split("\n").map(function(para,idx){
+        			return(
+        				<p key={idx}>
+        				{para}
+        				</p>
+        			)
+        		})
+            }
+            </div> 
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={()=>{this.toggle(this.props.idx)}}><FontAwesome name='github-square' size="2x"/> Github</Button>{' '}
-      
+          	{this.props.data.github
+          		?<Button color="primary" onClick={()=>{this.openLink(this.props.data.github)}}>
+            	<FontAwesome name='github' /> Github
+            </Button>
+            	:null
+        	}
+        	{' '}
+        	{this.props.data.website
+          		?<Button color="warning" onClick={()=>{this.openLink(this.props.data.website)}}>
+            	<FontAwesome name='external-link' /> Website
+            </Button>
+            	:null
+        	}
           </ModalFooter>
         </Modal>
         </Col>
         )
 	}
 }
-function ProjBlock(props)
-{	
-	return props.projs.map(function(ele,idx){
-		return (<Proj idx={idx}/>)
-	})
-}
 
-Projects.defaultProps={
-	projects:['one','two','three',4,5,6]
-}
+
 export default Projects;

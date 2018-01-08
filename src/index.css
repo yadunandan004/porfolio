@@ -13,15 +13,17 @@ body{
   display: inline-block;
  padding: 10px 20px 10px 20px;
  margin-top: 20px;
- margin-bottom: 20px; 
+ margin-bottom: 20px;
+ border-radius: 5px; 
  box-shadow: -5px 5px 4px 1px #9b9b9b; 
 }
 /*.section2{
   background-color: #f48675;
   color:white;
 }*/
-#about{
-  padding-top: 70px;
+#plain-link{
+  color:inherit;
+  text-decoration: none;
 }
 .section4{
   /*background-color: #35a37c;*/
@@ -32,31 +34,26 @@ body{
 .section2 a{
 	color: black;
 }
-.left{
-	float: left;
-  text-align: left;
-}
-.right{
-	float: right;
-}
- #profile-img{
- 	border-style: solid;
- 	border-radius: 50%;
- 	border-color: #b5b6b7;
- 	border-width: 10px;
- 	height: auto; 
-    width: auto; 
-    max-width: 60%; 
-    max-height: 60%;
- }
+
+
  .nav-text{
   color:white;
  }
+ .left{
+  float: left;
+}
+.right{
+  float: right;
+}
 /* section{
   padding:20px 0px 20px 0px;
 }*/
+
 #my-footer{
-  padding:50px 0px 50px 0px;
+  padding:50px 20px 50px 20px;
   background-color: #191918;
   color: #fff435;
+}
+#my-footer h6{
+  display: inline-block;
 }

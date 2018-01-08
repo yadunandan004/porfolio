@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/banner.css';
 import {Collapse,
   Navbar,
   NavbarToggler,
@@ -11,9 +12,19 @@ class Banner extends React.Component {
   {
     super(props);
     this.toggle=this.toggle.bind(this);
+    this.responsive=this.responsive.bind(this);
     this.state={
       isOpen:false
     };
+  }
+  responsive()
+  {
+    var x = document.getElementById("nav-bar");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
   }
   toggle()
   {
@@ -23,34 +34,17 @@ class Banner extends React.Component {
   }
   render() {
     return(
-      <div>
-      <Navbar fixed="top" color="danger" light expand="md">
-        <NavbarBrand href="/">{this.props.name}</NavbarBrand>
-        <NavbarToggler onClick={this.toggle} />
-         <Collapse isOpen={this.state.isOpen} navbar>
-         
-         <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="#about">About Me</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="#skills">Skills</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="#edu">Education</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="#projects">Projects</NavLink>
-              </NavItem>
-              </Nav>
-              </Collapse>
-      </Navbar>
+      <div className="topnav" id="nav-bar">
+      <h4>Yadu Nandan</h4>
+      <ul>
+      <li><a className="active" href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#edu">Education and Work</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+      <a href="javascript:void(0);" className="icon" onClick={this.responsive}>&#9776;</a>
       </div>
     );
   }
-}
-Banner.defaultProps={
-  name:"Yadu Nandan",
-  
 }
 export default Banner;
