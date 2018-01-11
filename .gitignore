@@ -16,8 +16,11 @@
 .env.test.local
 .env.production.local
 
+
 /public/font-awesome
 /portfolio_backend/static
+/portfolio_backend/build
+/portfolio_backend/Procfile
 /portfolio_backend/port_app/migrations
 npm-debug.log*
 yarn-debug.log*

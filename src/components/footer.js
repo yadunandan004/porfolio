@@ -11,8 +11,6 @@ class Footer extends React.Component{
 	getResume()
 	{
 		window.open('/static/resume.pdf','_blank');
-		// axios.get('/static/resume.pdf').then(data=>{
-		// })
 	}
 	render()
 	{

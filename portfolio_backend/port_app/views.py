@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 from port_app.models import Skill,About,School,Work,Contact,Project
+from django.conf import settings
+import os
 # Create your views here.
 def index(req):
 	if req.method=="GET":
@@ -34,3 +36,10 @@ def index(req):
 		return JsonResponse(resp)
 	else:
 		return HttpResponse("Send a Post request!!")
+def prim(req):
+	if req.method=="GET":		
+		try:
+			with open(os.path.join(settings.BUILD_DIR, 'index.html')) as file:
+				return HttpResponse(file.read())
+		except:
+			return HttpResponse("index.html not found!!",status=501)
